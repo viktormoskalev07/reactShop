@@ -1,7 +1,7 @@
 
 
 
-export const cars =[
+  const cars =[
 
     {
         name: 'nice car 1',
@@ -29,5 +29,55 @@ export const cars =[
     },
 
 ]
+  const books =[
 
-export const allProducts=[cars]
+    {
+        name: 'nice book  1',
+        price:  '2 ',
+        description: 'beautiful book ',
+        img:'book/1.jpg'
+    },
+       {
+        name: 'nice book 2',
+        price:  '12 ',
+        description: 'cool book ',
+        img:'book/2.jpg'
+    },
+       {
+        name: 'nice book 3',
+        price:  ' 5',
+        description: 'good book ',
+        img:'book/3.jpg'
+    }
+
+]
+  const juice =[
+
+    {
+        name: '  juice  1',
+        price:  '6 ',
+        description: 'beautiful juice ',
+        img:'juice/1.jpg'
+    },
+       {
+        name: '  juice 2',
+        price:  ' 2 ',
+        description: 'cool juice ',
+        img:'juice/2.jpg'
+    },
+       {
+        name: '  juice 3',
+        price:  ' 2',
+        description: 'good juice ',
+        img:'juice/3.jpg'
+    }
+
+]
+
+
+export const  ProductsByName={
+    Cars:cars,
+    Books:books,
+    Juice:juice
+
+}

@@ -1,5 +1,5 @@
 
-export const ROUTES = [
+export const  ROUTES_CONFIG = [
 
     {
         name: 'Cars',

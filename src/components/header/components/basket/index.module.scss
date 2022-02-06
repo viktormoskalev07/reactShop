@@ -1,0 +1,16 @@
+
+
+
+    .basket {
+      color: var(--primaryColor);
+      font-size:25px;
+      display:flex;
+      align-items:center;
+      padding:5px 15px;
+      :global{
+        svg {
+          margin-left: 20px;
+          font-size:inherit;
+        }
+      }
+    }

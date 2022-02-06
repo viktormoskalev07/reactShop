@@ -3,6 +3,10 @@ $md: 768px;
 $lg: 992px;
 $xl: 1200px;
 $xxl: 1400px;
+
+:root{
+  --primaryColor: #e88417;
+}
 @mixin sm {
   @media (min-width:$sm) {
     @content

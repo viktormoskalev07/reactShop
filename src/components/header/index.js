@@ -14,30 +14,25 @@ import styles from './index.module.scss'
 import {   ROUTES_CONFIG} from "../../routes";
 import {NavLink} from "react-router-dom";
 import Basked from "./components/basket";
+import {useOpen} from "../../hooks/use-open";
 
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 export const Header = () => {
     const [anchorElNav, setAnchorElNav] = React.useState(null);
-    const [anchorElUser, setAnchorElUser] = React.useState(null);
+
 
     const handleOpenNavMenu = (event) => {
         setAnchorElNav(event.currentTarget);
-    };
-    const handleOpenUserMenu = (event) => {
-        setAnchorElUser(event.currentTarget);
     };
 
     const handleCloseNavMenu = () => {
         setAnchorElNav(null);
     };
-
-    const handleCloseUserMenu = () => {
-        setAnchorElUser(null);
-    };
+    const {isOpen , onClose ,onOpen  , onToggle} = useOpen();
 
     return (
-        <AppBar className={styles.header} position="static">
+        <AppBar className={styles.header} position={'sticky'}>
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
                     <Typography
@@ -123,33 +118,11 @@ export const Header = () => {
 
                     <Box sx={{ flexGrow: 0 }}>
                         <Tooltip title="Open basket">
-                            <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+                            <IconButton onClick={onToggle} sx={{ p: 0 }}>
                                 <Basked/>
                             </IconButton>
                         </Tooltip>
-                        <Menu
-                            sx={{ mt: '65px' ,width:'800px'}}
-                            id="menu-appbar"
-                            anchorEl={anchorElUser}
-                            anchorOrigin={{
-                                vertical: 'top',
-                                horizontal: 'right',
-                            }}
-                            keepMounted
-                            transformOrigin={{
-                                vertical: 'top',
-                                horizontal: 'right',
-                            }}
-
-                            open={Boolean(anchorElUser)}
-                            onClose={handleCloseUserMenu}
-                        >
-                            {settings.map((setting) => (
-                                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                                    <Typography textAlign="center">{setting}</Typography>
-                                </MenuItem>
-                            ))}
-                        </Menu>
+                        {isOpen&& <div> her</div>}
                     </Box>
                 </Toolbar>
             </Container>

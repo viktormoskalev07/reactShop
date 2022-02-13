@@ -1,8 +1,8 @@
-import { useCallback, useMemo, useState } from 'react';
+import {useCallback, useMemo, useState} from 'react';
 
 
-export const useOpen = (init ) => {
-  const [isOpen, setIsOpen] = useState (init);
+export const useOpen = (init) => {
+  const [isOpen, setIsOpen] = useState(init);
   const onOpen = useCallback(() => {
     setIsOpen(true);
   }, []);
